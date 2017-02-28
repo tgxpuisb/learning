@@ -17,7 +17,7 @@
 > 
 > 简单来说一个标准的脚手架应该包含如下几个功能 #代码模板(最基础的部件,)
 >
-	1. 命令行交互功能(用来获取用户的配置与选择,yeoman使用的是业界典范[Inquirer.js](https://github.com/SBoudrias/Inquirer.js))
+	1. 命令行交互功能(用来获取用户的配置与选择,yeoman使用的是业界典范Inquirer.js)
 	2. 代码模板(根据用户配置生成对应代码,yeoman在这一块基于ejs模板,当然也有基于mustache的)
 	3. 文件处理
 	4. 与其他工具(git, npm)整合
