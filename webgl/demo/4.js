@@ -49,6 +49,7 @@ scene.add(plane)
 */
 
 // 球体
+/*
 var Sphere = new THREE.Mesh(
 	new THREE.SphereGeometry(3, 20, 20, 0, Math.PI / 4, 0, Math.PI),
 	new THREE.MeshBasicMaterial({
@@ -57,6 +58,58 @@ var Sphere = new THREE.Mesh(
 	})
 )
 scene.add(Sphere)
+*/
+
+//圆形
+/*
+var Cicle = new THREE.Mesh(
+	new THREE.CircleGeometry(3, 20, 0, Math.PI / 1),
+	new THREE.MeshBasicMaterial({
+		color: 0xff4956,
+		wireframe: true
+	})
+)
+scene.add(Cicle)
+*/
+
+// 标准圆柱体
+/*
+var Cylinder = new THREE.Mesh(
+	new THREE.CylinderGeometry(2, 2, 5, 20, 10),
+	new THREE.MeshBasicMaterial({
+		color: 0xff4956,
+		wireframe: true
+	})
+)
+scene.add(Cylinder)
+*/
+
+// 圆台
+/*
+var Cylinder = new THREE.Mesh(
+	new THREE.CylinderGeometry(1, 2, 5, 20, 10),
+	new THREE.MeshBasicMaterial({
+		color: 0xff4956,
+		wireframe: true
+	})
+)
+scene.add(Cylinder)
+*/
+
+var Cylinder = new THREE.Mesh(
+	new THREE.CylinderGeometry(0, 2, 5, 20, 10),
+	new THREE.MeshBasicMaterial({
+		color: 0xff4956,
+		wireframe: true
+	})
+)
+scene.add(Cylinder)
+
+
+
+
+
+
 
 /*
 var z = 1
