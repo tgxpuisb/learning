@@ -96,6 +96,8 @@ var Cylinder = new THREE.Mesh(
 scene.add(Cylinder)
 */
 
+//圆锥
+/*
 var Cylinder = new THREE.Mesh(
 	new THREE.CylinderGeometry(0, 2, 5, 20, 10),
 	new THREE.MeshBasicMaterial({
@@ -104,9 +106,67 @@ var Cylinder = new THREE.Mesh(
 	})
 )
 scene.add(Cylinder)
+*/
 
 
+//正四面体
+/*
+var Tetrahedron = new THREE.Mesh(
+	new THREE.TetrahedronGeometry(2),
+	new THREE.MeshBasicMaterial({
+		color: 0xff4956,
+		wireframe: true
+	})
+)
+scene.add(Tetrahedron)
+*/
 
+//正八面体
+/*
+var Octahedron = new THREE.Mesh(
+	new THREE.OctahedronGeometry(2),
+	new THREE.MeshBasicMaterial({
+		color: 0xff4956,
+		wireframe: true
+	})
+)
+scene.add(Octahedron)
+*/
+
+// 正十二面体
+/*
+var Icosahedron = new THREE.Mesh(
+	new THREE.IcosahedronGeometry(2),
+	new THREE.MeshBasicMaterial({
+		color: 0xff4956,
+		wireframe: true
+	})
+)
+scene.add(Icosahedron)
+*/
+
+// 圆环面
+/*
+var Torus = new THREE.Mesh(
+	new THREE.TorusGeometry(3, 1, 20, 20, Math.PI),
+	new THREE.MeshBasicMaterial({
+		color: 0xff4956,
+		wireframe: true
+	})
+)
+scene.add(Torus)
+*/
+
+// 圆环节
+
+var Torus = new THREE.Mesh(
+	new THREE.TorusKnotGeometry(2, 0.5, 32, 8),
+	new THREE.MeshBasicMaterial({
+		color: 0xff4956,
+		wireframe: true
+	})
+)
+scene.add(Torus)
 
 
 
