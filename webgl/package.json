@@ -1,0 +1,10 @@
+{
+  "name": "threejs-study",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "LYZ",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.15.2"
+  }
+}
