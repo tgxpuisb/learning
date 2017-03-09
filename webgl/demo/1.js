@@ -4,7 +4,7 @@ document.querySelector('body').appendChild(renderer.domElement)
 renderer.setClearColor(0x000000) //要渲染了才能看得到
 
 
-// sence
+// scene
 var scene = new THREE.Scene()
 
 
@@ -18,7 +18,7 @@ scene.add(camera)
 // 正交照相机
 var camera = new THREE.OrthographicCamera(-2, 2, 1.5, -1.5, 1, 10)
 camera.position.set(0, 0, 5)
-sence.add(camera)
+scene.add(camera)
 
 
 // cube
