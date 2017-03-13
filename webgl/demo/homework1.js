@@ -68,12 +68,12 @@ Torus4.position.z = -1
 Torus4.rotateY(Math.PI / 2)
 scene.add(Torus4)
 
- var ambientLight = new THREE.AmbientLight(0x666666)  // 添加环境光
- scene.add(ambientLight)
+var ambientLight = new THREE.AmbientLight(0x666666)  // 添加环境光
+scene.add(ambientLight)
 
- var directionalLight = new THREE.DirectionalLight(0x989898) // 添加平行光
- directionalLight.position.set(-5, 5, 5)   // 设置平行光光源位置
- scene.add(directionalLight)
+var directionalLight = new THREE.DirectionalLight(0x989898) // 添加平行光
+directionalLight.position.set(-5, 5, 5)   // 设置平行光光源位置
+scene.add(directionalLight)
 
 
 renderer.render(scene, camera)
