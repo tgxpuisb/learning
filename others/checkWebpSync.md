@@ -19,6 +19,7 @@ function checkWebp(cb){
 }
 
 // 使用
+
 checkWebp(isSupport => {
 	if(isSupport){
 		//do somethings
