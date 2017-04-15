@@ -6,6 +6,8 @@
 2. [同步判断设备是否支持webp](https://github.com/tgxpuisb/learning/blob/master/others/checkWebpSync.md)
 3. [关于最后一起罗辑思维视频节目的听后感](https://github.com/tgxpuisb/learning/blob/master/others/think.md)
 4. [程序员该玩怎样的游戏](https://github.com/tgxpuisb/learning/blob/master/others/what-the-game.md)
+5. [精力管理读书笔记](https://github.com/tgxpuisb/learning/blob/master/others/The-Power-Full-Engagement.md)
+6. [javascript位预算与双精度浮点数](https://github.com/tgxpuisb/learning/blob/master/others/number.md)
 
 ### three.js学习
 
