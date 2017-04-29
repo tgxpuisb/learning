@@ -8,6 +8,7 @@
 4. [程序员该玩怎样的游戏](https://github.com/tgxpuisb/learning/blob/master/others/what-the-game.md)
 5. [精力管理读书笔记](https://github.com/tgxpuisb/learning/blob/master/others/The-Power-Full-Engagement.md)
 6. [javascript位预算与双精度浮点数](https://github.com/tgxpuisb/learning/blob/master/others/number.md)
+7. [Bodymovin一个能够运行在三端动画的库](https://github.com/tgxpuisb/learning/blob/master/others/bodymovin-study.md)
 
 ### three.js学习
 
