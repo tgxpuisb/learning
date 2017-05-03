@@ -27,3 +27,4 @@
 1. [那些年坑过我们的浏览器滚动事件](http://w3help.org/zh-cn/causes/SD9013)
 2. [四种常见的 POST 提交数据方式](https://imququ.com/post/four-ways-to-post-data-in-http.html)
 3. [XMLHttpRequest2 新技巧](https://www.html5rocks.com/zh/tutorials/file/xhr2/)
+4. [Headless的谷歌浏览器](https://developers.google.com/web/updates/2017/04/headless-chrome)
