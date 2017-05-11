@@ -9,6 +9,7 @@
 5. [精力管理读书笔记](https://github.com/tgxpuisb/learning/blob/master/others/The-Power-Full-Engagement.md)
 6. [javascript位预算与双精度浮点数](https://github.com/tgxpuisb/learning/blob/master/others/number.md)
 7. [Bodymovin一个能够运行在三端动画的库](https://github.com/tgxpuisb/learning/blob/master/others/bodymovin-study.md)
+8. [Promise规范学习](https://github.com/tgxpuisb/learning/blob/master/others/Promise-learning.md)
 
 ### three.js学习
 
@@ -28,3 +29,4 @@
 2. [四种常见的 POST 提交数据方式](https://imququ.com/post/four-ways-to-post-data-in-http.html)
 3. [XMLHttpRequest2 新技巧](https://www.html5rocks.com/zh/tutorials/file/xhr2/)
 4. [Headless的谷歌浏览器](https://developers.google.com/web/updates/2017/04/headless-chrome)
+5. [WEEX的安卓端实现原理](https://zhuanlan.zhihu.com/p/25326775)
