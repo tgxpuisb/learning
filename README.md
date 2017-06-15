@@ -30,3 +30,5 @@
 3. [XMLHttpRequest2 新技巧](https://www.html5rocks.com/zh/tutorials/file/xhr2/)
 4. [Headless的谷歌浏览器](https://developers.google.com/web/updates/2017/04/headless-chrome)
 5. [WEEX的安卓端实现原理](https://zhuanlan.zhihu.com/p/25326775)
+6. [VUE源码学习](http://hcysun.me/2017/03/03/Vue%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/)
+7. [BetterScroll模拟滚动消除ios滚动回弹效果](https://github.com/ustbhuangyi/better-scroll)
