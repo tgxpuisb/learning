@@ -33,3 +33,4 @@
 6. [VUE源码学习](http://hcysun.me/2017/03/03/Vue%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/)
 7. [BetterScroll模拟滚动消除ios滚动回弹效果](https://github.com/ustbhuangyi/better-scroll)
 8. [BetterScroll学习](http://www.imooc.com/article/18232)
+9. [贝叶斯定理](https://zhuanlan.zhihu.com/p/22467549)
