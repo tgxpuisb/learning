@@ -25,7 +25,7 @@ phantomjs:
 一个机遇qtwebkit的一个无界面浏览器，可以在各种环境中使用。配合phantomCSS和CasperJS工具的支持，页面著名的Selenium测试框架也对其进行了封装。在Chrome发布带有无界面浏览器功能的版本之后开发者宣布放弃维护。不过鉴于基于Chrome浏览器的测试框架还需要一定的发展时间。所以phantomjs本身还是值得使用的。基于此封装的nightmare测试框架稳定性不高，容易出现卡死的情况。
 
 electron:
-electron这个工具本来是基于Chromium开发出来提供给前端做WEB桌面应用的，功能强大，于是nightmare测试框架在2.0版本之后遍放弃基于phantomjs来封装，转投向electron。我司有一个由运营同学拖拽生成页面的工具在页面发布上线前会经过改工具的自动化检测。该缺点是在linux环境下面仅支持安装了界面的ubuntu。因为与Chrome同样是基于Chromium，所以高版本electron对于linux也能够支持无界面（建议使用ubuntu而非centos）。
+electron这个工具本来是基于Chromium开发出来提供给前端做WEB桌面应用的，功能强大，于是nightmare测试框架在2.0版本之后遍放弃基于phantomjs来封装，转投向electron。我司有一个由运营同学拖拽生成页面的工具在页面发布上线前会经过改工具的自动化检测。该缺点是在linux环境下面仅支持安装了界面的ubuntu。因为与Chrome同样是基于Chromium，所以高版本electron对于linux也能够支持无界面。（建议使用ubuntu而非centos）
 
 各种driver:
 这些driver基于浏览器提供的各种协议，通过协议可以和浏览器进行同行，从而操作浏览器。nightwatch是一个基于Selenium和webdriver封装的测试框架。能够模拟用户操作，同时也封装了断言库，支持多浏览器测试，虽然在linux仅支持selenium+phantomjs版本，不过依然是一个不错的适合在linux环境下做UI自动化测试的框架。
@@ -42,14 +42,58 @@ npm install --save-dev selenium-server phantomjs-prebuild chromedriver nightwatc
 
 接下来我们需要新建一个nightwatch的配置文件，可以起名为nightwatch.config.js具体配置内容可以参考文档[http://nightwatchjs.org/guide#settings-file](http://nightwatchjs.org/guide#settings-file)
 
-之后我们需要做两件事,启动一个selenium服务器,启动一个能够打开测试页面的http-server
+之后我们需要准备测试页面，HTML，JS，CSS等，然后启动服务器使其可以被测试工具访问。可以使用http-server或者当然你使用python -m SimpleHTTPServer 8080 这样的花式启动服务器方式也是OK的，原理一样。
 
-然后新建一个(或多个)测试用例的js文件,在用例中可以通过selenium控制浏览器访问测试页面.并且通过模拟用户交互,并且对交互结果进行断言,整个测试环境就搭建完成了
+之后我们需要书写测试用例文件，测试用例可以是多个文件也可以是单个文件，在测试中你可以控制浏览器进行跳转操作，滚动操作，模拟用户点击等等。具体可以参考文档[http://nightwatchjs.org/api](http://nightwatchjs.org/api)
 
-最后,我们运行nightwatch 命令就可以开开心心的进行测试了
+然后我们运行nightwatch的命令行工具启动测试即可。上述操作可以写成一个简单的server.js。
 
-到此,你以为真的结束了么.在这个过程中你知道你会踩到多少坑么,如果你是在mac电脑上进行的测试,你可能确实会一路畅通.但是当你移植到linux环境的时候各种问题就来了,首先linux下除了phantomjs之外的其他driver在没有安装虚拟界面的情况下都会无法使用,你可以只使用phantomjs来进行测试或者安装虚拟界面,如果在centos情况下出现错误可以尝试先安装一些依赖库,一般来说远程linux的机器网速都比较慢,建议将使用脚本安装的依赖提前安装好,以免跑CI的时候速度过慢,或者超时.
+server.js
+```
+"use strict"
 
-结束
+const path = require('path')
+const spawn = require('cross-spawn')
+const httpServer = require('http-server')
 
-最近两周一直在研究UI自动化测试相关的技术.目前已经有了一些进展,并且也给公司的部分基础库集成了UI自动化测试与单元测试.我将这段时间学习到的技术与心得都写了下来,希望对大家能够有所帮助
+const server = httpServer.createServer({
+  root: path.resolve(__dirname, '../../')
+})
+server.listen(8080)
+let args = ['--config', 'test/test-e2e/nightwatch.config.js', '--env', 'phantomjs', '--test', 'test/test-e2e/test.spec.js']
+// nightwatch --config nightwatch.config.js --env phantomjs --test test/test.spec.js
+
+const runner = spawn('./node_modules/.bin/nightwatch', args, {
+  stdio: 'inherit'
+})
+
+runner.on('exit', function (code) {
+  server.close()
+  process.exit(code)
+})
+
+runner.on('error', function (err) {
+  server.close()
+  throw err
+})
+```
+
+test.spec.js
+```js
+module.exports = {
+	'test-name': function (browser) {
+		browser.url('http://localhost:8080/example/index.html', () => {
+			// 做操作浏览器的操作，然后下断言
+		})
+	}
+}
+```
+
+
+不过还是推荐写一个server.js，这样方便一些，在测试的时候我们只需要运行node server.js就可以开始我们的自动化测试了。
+
+到此，大功告成了，如果你觉得集成过程很轻松，那么很可能你是用windows或者Mac OS在本地运行的。如果你要部署在linux环境中，你还需要踩几个坑。首先linux环境中目前只能使用phantomjs来进行测试。centOS用户如果启动失败需要安装一些基础库（用报错信息百度即可）。linux网速比较慢的话，一些大型的工具建议提前安装好。以免运行脚本时间过长。
+
+### 结束
+
+最近两周一直在研究UI自动化测试相关的技术，目前已经有了一些进展，并且也给公司的部分基础库集成了UI自动化测试与单元测试。我将这段时间学习到的技术与心得都写了下来，希望对大家能够有所帮助。
