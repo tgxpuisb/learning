@@ -10,7 +10,7 @@
 6. [javascript位预算与双精度浮点数](https://github.com/tgxpuisb/learning/blob/master/others/number.md)
 7. [Bodymovin一个能够运行在三端动画的库](https://github.com/tgxpuisb/learning/blob/master/others/bodymovin-study.md)
 8. [Promise规范学习](https://github.com/tgxpuisb/learning/blob/master/others/Promise-learning.md)
-
+9. [Weex踩坑](https://segmentfault.com/a/1190000010023500
 ### three.js学习
 
 1. [第0章--先立个flag](https://github.com/tgxpuisb/learning/blob/master/webgl/0.md)
