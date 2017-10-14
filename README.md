@@ -10,7 +10,7 @@
 6. [javascript位预算与双精度浮点数](https://github.com/tgxpuisb/learning/blob/master/others/number.md)
 7. [Bodymovin一个能够运行在三端动画的库](https://github.com/tgxpuisb/learning/blob/master/others/bodymovin-study.md)
 8. [Promise规范学习](https://github.com/tgxpuisb/learning/blob/master/others/Promise-learning.md)
-9. [Weex踩坑](https://segmentfault.com/a/1190000010023500
+10. [gitlab-ci的学习](https://github.com/tgxpuisb/learning/blob/master/others/gitlab-ci-learn.md)
 ### three.js学习
 
 1. [第0章--先立个flag](https://github.com/tgxpuisb/learning/blob/master/webgl/0.md)
@@ -34,3 +34,4 @@
 7. [BetterScroll模拟滚动消除ios滚动回弹效果](https://github.com/ustbhuangyi/better-scroll)
 8. [BetterScroll学习](http://www.imooc.com/article/18232)
 9. [贝叶斯定理](https://zhuanlan.zhihu.com/p/22467549)
+9. [Weex踩坑](https://segmentfault.com/a/1190000010023500)
